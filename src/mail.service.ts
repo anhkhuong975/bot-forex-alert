@@ -28,7 +28,7 @@ export class MailService {
             to: 'anhkhuong975@gmail.com',
             subject: title,
             text: 'PAK',
-            html: '<h1>' + content + '</h1>'
+            html: '<div>' + content + '</div>'
         };
         this.transporter.sendMail(mail, function(error, info) {
             if (error) {
