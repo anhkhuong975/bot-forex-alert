@@ -45,6 +45,7 @@ function main() {
 
 // START IN HERE
 mailService.sendMail(MAIN_CONTENT.START);
+main();
 setInterval(() => {
     main();
 }, TIME_INTERVAL);
