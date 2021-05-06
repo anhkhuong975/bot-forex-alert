@@ -24,7 +24,7 @@ function main() {
         rsiService.checkBreakoutRsi(R_E_U_H1.data.rsi, END_POINT.RSI_EUR_USD_H1.DES);
 
     })).catch(error => {
-        mailService.sendMail("ERROR FETCH API");
+        mailService.sendMail("ERROR FETCH API: " + error.toString());
         console.log(colors.red(error));
     });
 }
