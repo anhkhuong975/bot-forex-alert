@@ -17,6 +17,7 @@
     "typescript": "^4.2.4"
   },
   "scripts": {
+    "build": "tsc",
     "start": "tsc && node dist/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

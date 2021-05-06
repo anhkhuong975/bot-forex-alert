@@ -1,4 +1,4 @@
-export const TIME_INTERVAL:number = 600000;
+export const TIME_INTERVAL:number = 1000000;
 
 export const RETRY_API :number = 3;
 
