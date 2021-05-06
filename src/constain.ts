@@ -33,7 +33,18 @@ export const END_POINT = {
             "&seriestype=c" +
             "&token=c2947qqad3if6b4ccp7g",
         DES: 'GBP_USD_H4'
-    }
+    },
+    RSI_EUR_USD_H1: {
+        URL: "https://finnhub.io/api/v1//indicator" +
+            "?symbol=FOREX:401484347" +
+            "&resolution=60" +
+            "&indicator=rsi" +
+            "&timeperiod=14" +
+            "&count=30" +
+            "&seriestype=c" +
+            "&token=c2947qqad3if6b4ccp7g",
+        DES: 'EUR_USD_H1'
+    },
 }
 
 export const RSI_OVER_H = 70;

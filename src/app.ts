@@ -14,13 +14,17 @@ function main() {
         axios.get(END_POINT.RSI_GBP_USD_M30.URL),
         axios.get(END_POINT.RSI_GBP_USD_H1.URL),
         axios.get(END_POINT.RSI_GBP_USD_H4.URL),
+        axios.get(END_POINT.RSI_EUR_USD_H1.URL),
     ]).then(axios.spread((
-        R_G_U_M30, R_G_U_H1, R_G_U_H4
+        R_G_U_M30, R_G_U_H1, R_G_U_H4, R_E_U_H1
     ) => {
         rsiService.checkBreakoutRsi(R_G_U_M30.data.rsi, END_POINT.RSI_GBP_USD_M30.DES);
         rsiService.checkBreakoutRsi(R_G_U_H1.data.rsi, END_POINT.RSI_GBP_USD_H1.DES);
         rsiService.checkBreakoutRsi(R_G_U_H4.data.rsi, END_POINT.RSI_GBP_USD_H4.DES);
+        rsiService.checkBreakoutRsi(R_E_U_H1.data.rsi, END_POINT.RSI_EUR_USD_H1.DES);
+
     })).catch(error => {
+        mailService.sendMail("ERROR FETCH API");
         console.log(colors.red(error));
     });
 }
