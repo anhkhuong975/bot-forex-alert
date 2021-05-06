@@ -1,4 +1,4 @@
-export const TIME_INTERVAL = 10000;
+export const TIME_INTERVAL = 600000;
 
 export const END_POINT = {
     RSI_GBP_USD_M30: {
