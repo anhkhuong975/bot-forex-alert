@@ -41,11 +41,16 @@ function rsi_process() {
         observables.push(observable);
     });
     const sendMail = new Observable(subscriber => {
-        let content: string = '<ul>' + successMessage + '</ul>' + "<br><br>";
+        let content:string = "";
+        if (successMessage.length) {
+            content = '<ul>' + successMessage + '</ul>' + "<br><br>";
+        }
         if (errorMessage !== "") {
             content = content + "<br>ERROR: <br>" + "<ul>" + errorMessage + "</ul>";
         }
-        mailService.sendMail(content);
+        if (content.length !== 0) {
+            mailService.sendMail(content);
+        }
         subscriber.complete();
     });
     observables.push(sendMail);
