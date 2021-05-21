@@ -1,5 +1,5 @@
 import nodemailer from "nodemailer";
-import {MAIL_SERVICE_CONFIG} from "./constain";
+import {ENABLE_MAIL, MAIL_SERVICE_CONFIG} from "./constain";
 const colors = require('colors');
 
 export class MailService {
@@ -30,12 +30,14 @@ export class MailService {
             text: 'PAK',
             html: '<div>' + content + '</div>'
         };
-        this.transporter.sendMail(mail, function(error, info) {
-            if (error) {
-                console.log(colors.red(error));
-            } else {
-                console.log(colors.blue('Email sent: ' + info.response));
-            }
-        });
+        if (ENABLE_MAIL) {
+            this.transporter.sendMail(mail, function(error, info) {
+                if (error) {
+                    console.log(colors.red(error));
+                } else {
+                    console.log(colors.blue('Email sent: ' + info.response));
+                }
+            });
+        }
     }
 }

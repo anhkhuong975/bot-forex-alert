@@ -12,3 +12,4 @@ export const MAIL_SERVICE_CONFIG = {
 export const MAIN_CONTENT = {
     START: "BOT START",
 }
+export const ENABLE_MAIL: boolean = false;
